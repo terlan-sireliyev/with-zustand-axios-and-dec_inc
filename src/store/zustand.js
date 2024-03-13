@@ -24,7 +24,7 @@ export const createStore = create((set) => ({
   fetchUserData: async () => {
     try {
       const res = await axios.get("https://jsonplaceholder.typicode.com/users");
-      set({ user: res.data }); // Update the state with fetched user data
+      set({ user: res.data });
     } catch (error) {
       console.error("Error fetching user data:", error);
     }
