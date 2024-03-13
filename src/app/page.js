@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { createStore } from "../store/zustand";
 
 export default function Home() {
+  const [userData, setUserData] = useState(null);
   const {
     WorkName,
     count,
@@ -12,8 +13,6 @@ export default function Home() {
     user,
     usersName,
   } = createStore();
-
-  const [userData, setUserData] = useState(null);
   useEffect(() => {
     fetchUserData();
   }, []);
@@ -33,13 +32,13 @@ export default function Home() {
             Plus
           </button>
         </div>
-        <div>
-          <div className="font-bold ml-5 mb-4">{WorkName.usersName}</div>
+        <div className="flex flex-col justify-center items-center mt-6">
+          <div className="font-bold ml-5 mb-2">{WorkName.usersName}</div>
           {userData?.map((el, index) => {
             return (
               <>
-                <div>
-                  <div key={index} className="flex gap-2">
+                <div className="">
+                  <div key={index} className="flex justify-center  gap-2">
                     <p className="font-bold">{1 + index}.</p>
                     <p>{el.name}</p>
                   </div>

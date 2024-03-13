@@ -30,3 +30,4 @@ export const createStore = create((set) => ({
     }
   },
 }));
+//in next.js with zustand decrement,increment and with axios fetchUserData
